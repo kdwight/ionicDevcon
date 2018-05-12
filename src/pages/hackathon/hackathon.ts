@@ -26,25 +26,21 @@ export class HackathonPage {
     console.log("ionViewDidLoad HackathonPage");
   }
 
-  // refresh(): void {
-  //   // window.location.reload();
-  //   this.navCtrl.setRoot(this.navCtrl.getActive().component);
-  // }
-
   ionViewWillEnter() {
-    this.myDefaultMethodToFetchData();
+    this.fetchFuds();
   }
 
   refresh() {
     this.ionViewWillEnter();
   }
 
-  myDefaultMethodToFetchData() {
+  fetchFuds() {
     this.http
       .get("https://saantayokakain.com/API/saankakain.php")
-      .subscribe(data => {
+      .subscribe((data: any) => {
+        //(data: any) if there's error when the data has more inner objects
         const rand = Math.floor(Math.random() * 30);
-        this.kakainBa = data.restaurantDB[rand];
+        this.kakainBa = data.restaurantDB[rand]; //sweet
         console.log(this.kakainBa);
       });
   }

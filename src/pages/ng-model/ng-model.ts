@@ -16,8 +16,8 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
 export class NgModelPage {
   data: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.data = this.navParams.get("data");
-    console.log(this.data);
+    this.data = this.navParams.get("data"); //stores data that u bind from home.ts file
+    console.log(this.data); //view this on the console
   }
 
   ionViewDidLoad() {
