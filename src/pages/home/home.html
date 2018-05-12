@@ -1,14 +1,40 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      saan tayo kakain???
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-list inset>
+
+    <ion-item>
+      <ion-label>Username</ion-label>
+      <ion-input type="text" [(ngModel)]="user.userName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="user.passWord"></ion-input>
+    </ion-item>
+
+  </ion-list>
+  <button ion-button block (click)="next()">Default</button>
+
+  <ion-list>
+    <ion-item *ngFor="let item of weatherList.list" (click)="next(item)">
+      <ion-avatar item-start>
+        <img src="http://openweathermap.org/img/w/{{item.weather[0].icon}}.png">
+      </ion-avatar>
+      <h2>{{item.name}}</h2>
+      <h3>{{item.weather[0].description}}!</h3>
+      <p>{{item.main.temp}}.</p>
+    </ion-item>
+  </ion-list>
+
+  <h1>{{weatherList.name}}</h1>
+  <button ion-button block (click)="refresh()">Again</button>
+
+
 </ion-content>

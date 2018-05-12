@@ -1,0 +1,59 @@
+<!--
+  Generated template for the NextPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>next</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <img src="http://openweathermap.org/img/w/{{data.weather[0].icon}}.png">
+  <br> {{data.name}}
+  <br> {{data.dt}}
+  <br> {{data.id}}
+  <h1>Coords</h1>
+  <ul>
+    <li>lon: {{data.coord.lon}}</li>
+    <li>lat: {{data.coord.lat}}</li>
+  </ul>
+  <h1>Sys</h1>
+  <ul>
+    <li>type: {{data.sys.type}}</li>
+    <li>id:{{data.sys.id}} </li>
+    <li>message:{{data.sys.message}} </li>
+    <li>country:{{data.sys.country}} </li>
+    <li>sunrise:{{data.sys.sunrise}}</li>
+    <li>sunset:{{data.sys.sunset}}</li>
+  </ul>
+  <h1>Weather</h1>
+  <ul>
+    <li>{{data.weather[0].id}}</li>
+    <li>{{data.weather[0].main}}</li>
+    <li>{{data.weather[0].description}}</li>
+  </ul>
+  <h1>Main</h1>
+  <ul>
+    <li>{{data.main.temp}}</li>
+    <li>{{data.main.pressure}}</li>
+    <li>{{data.main.humidity}}</li>
+    <li>{{data.main.temp_min}}</li>
+    <li>{{data.main.temp_max}}</li>
+    <li>{{data.visibility}}</li>
+  </ul>
+  <h1>Wind</h1>
+  <ul>
+    <li>{{data.wind.speed}}</li>
+    <li>{{data.wind.deg}}</li>
+  </ul>
+  <h1>Clouds</h1>
+  <ul>
+    <li>{{data.clouds.all}}</li>
+  </ul>
+</ion-content>
